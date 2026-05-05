@@ -1,4 +1,4 @@
-CREATE TABLE card_payment_schedule_projection (
+CREATE TABLE card_payment_schedules (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   card_account_id INTEGER NOT NULL,
   closing_date TEXT NOT NULL,
@@ -11,5 +11,5 @@ CREATE TABLE card_payment_schedule_projection (
   UNIQUE (card_account_id, closing_date)
 );
 
-CREATE INDEX idx_cps_card ON card_payment_schedule_projection(card_account_id);
-CREATE INDEX idx_cps_payment_due_date ON card_payment_schedule_projection(payment_due_date);
+CREATE INDEX idx_cps_card ON card_payment_schedules(card_account_id);
+CREATE INDEX idx_cps_payment_due_date ON card_payment_schedules(payment_due_date);

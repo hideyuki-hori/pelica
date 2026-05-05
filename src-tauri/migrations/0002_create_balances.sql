@@ -1,4 +1,4 @@
-CREATE TABLE balance_projection (
+CREATE TABLE balances (
   account_id INTEGER PRIMARY KEY,
   balance INTEGER NOT NULL DEFAULT 0,
   currency TEXT NOT NULL,
