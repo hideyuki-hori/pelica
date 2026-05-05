@@ -8,6 +8,7 @@ pub async fn init_db() -> Result<SqlitePool, Box<dyn std::error::Error + Send + 
     }
     let url = format!("sqlite://{}?mode=rwc", db_path.display());
     let pool = SqlitePool::connect(&url).await?;
+    sqlx::migrate!("./migrations").run(&pool).await?;
     Ok(pool)
 }
 
